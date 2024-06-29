@@ -1,5 +1,14 @@
 // Add any additional repositories for your dependencies here
 
 repositories {
-
+    maven {
+        url = "https://mvn.falsepattern.com/releases/"
+    }
+    maven {
+        url = "https://jitpack.io"
+    }
+    maven {
+        name = 'ModMaven'
+        url = 'https://modmaven.dev'
+    }
 }

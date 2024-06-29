@@ -1,5 +1,6 @@
 // Add your dependencies here
 
 dependencies {
-
+    implementation("com.falsepattern:endlessids-mc1.7.10:1.5.1")
+    implementation("com.github.HbmMods:Hbm-s-Nuclear-Tech-GIT:1.0.27_X5000")
 }

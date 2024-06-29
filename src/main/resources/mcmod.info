@@ -2,15 +2,15 @@
     {
       "modid": "${modId}",
       "name": "${modName}",
-      "description": "An example mod for Minecraft 1.7.10 with Forge focussed on a stable setup.",
+      "description": "Fixes a crash when a nuke goes off.",
       "version": "${modVersion}",
       "mcversion": "${minecraftVersion}",
-      "url": "https://github.com/SinTh0r4s/MyMod",
+      "url": "",
       "updateUrl": "",
-      "authorList": ["SinTho0r4s"],
+      "authorList": ["Kellen"],
       "credits": "",
       "logoFile": "",
       "screenshots": [],
-      "dependencies": []
+      "dependencies": [""]
     }
 ]
