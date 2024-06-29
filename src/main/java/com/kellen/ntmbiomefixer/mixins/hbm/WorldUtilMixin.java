@@ -2,6 +2,7 @@ package com.kellen.ntmbiomefixer.mixins.hbm;
 
 
 import com.falsepattern.endlessids.mixin.helpers.ChunkBiomeHook;
+import com.hbm.main.MainRegistry;
 import com.hbm.world.WorldUtil;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -19,8 +20,8 @@ public class WorldUtilMixin {
      * @reason Update biome ids
      */
     @Inject(method = "Lcom/hbm/world/WorldUtil;setBiome(Lnet/minecraft/world/World;IILnet/minecraft/world/biome/BiomeGenBase;)V", at = @At("HEAD"), cancellable = true)
-    public void setBiome(World world, int x, int z, BiomeGenBase biome, CallbackInfo ci){
-        System.out.println("Here");
+    private static void setBiome(World world, int x, int z, BiomeGenBase biome, CallbackInfo ci){
+        MainRegistry.logger.debug("here");
         int relBlockX = x & 15;
         int relBlockZ = z & 15;
         Chunk chunk = world.getChunkFromBlockCoords(x, z);
