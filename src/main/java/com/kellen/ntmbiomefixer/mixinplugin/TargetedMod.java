@@ -13,8 +13,9 @@ public enum TargetedMod {
     //
 
     // Replace with your injected mods here, but always keep VANILLA:
-    VANILLA("Minecraft", "unused", true);
-//    GREGTECH("GregTech", "gregtech", false);
+    VANILLA("Minecraft", "unused", true),
+    NUCLEARTECHMOD("NuclearTechMod", "HBM-NTM", true),
+    ENDLESSIDS("EndlessIDs", "endlessids", true);
 
     public final String modName;
     public final String jarNamePrefixLowercase;
