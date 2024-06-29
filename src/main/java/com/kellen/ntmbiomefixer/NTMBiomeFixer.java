@@ -19,7 +19,7 @@ public class NTMBiomeFixer {
     // preInit "Run before anything else. Read your config, create blocks, items,
     // etc, and register them with the GameRegistry."
     public void preInit(FMLPreInitializationEvent event) {
-        proxy.preInit(event);
+//        proxy.preInit(event);
         PacketDispatcher.registerPackets();
     }
 

@@ -26,7 +26,7 @@ public abstract class WorldUtilMixin {
      */
     @Inject(method = "Lcom/hbm/world/WorldUtil;setBiome(Lnet/minecraft/world/World;IILnet/minecraft/world/biome/BiomeGenBase;)V", at = @At("HEAD"), cancellable = true)
     private static void setBiome(World world, int x, int z, BiomeGenBase biome, CallbackInfo ci){
-        MainRegistry.logger.debug("here");
+//        MainRegistry.logger.debug("here");
         int relBlockX = x & 15;
         int relBlockZ = z & 15;
         Chunk chunk = world.getChunkFromBlockCoords(x, z);
