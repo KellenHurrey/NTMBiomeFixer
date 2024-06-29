@@ -1,6 +1,6 @@
 package com.kellen.ntmbiomefixer.mixinplugin;
 
-import com.myname.mymodid.Tags;
+import com.kellen.ntmbiomefixer.Tags;
 import net.minecraft.launchwrapper.Launch;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
