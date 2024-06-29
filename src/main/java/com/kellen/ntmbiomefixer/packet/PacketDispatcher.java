@@ -1,6 +1,6 @@
-package com.kellen.ntmbiomefixer;
+package com.kellen.ntmbiomefixer.packet;
 
-import com.kellen.ntmbiomefixer.mixins.hbm.ChangedBiomeSyncPacket;
+import com.kellen.ntmbiomefixer.Tags;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.relauncher.Side;

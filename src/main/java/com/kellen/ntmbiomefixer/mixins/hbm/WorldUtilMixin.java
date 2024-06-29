@@ -3,8 +3,9 @@ package com.kellen.ntmbiomefixer.mixins.hbm;
 
 import com.falsepattern.endlessids.mixin.helpers.ChunkBiomeHook;
 import com.hbm.main.MainRegistry;
-import com.kellen.ntmbiomefixer.PacketDispatcher;
+import com.kellen.ntmbiomefixer.packet.PacketDispatcher;
 import com.hbm.world.WorldUtil;
+import com.kellen.ntmbiomefixer.packet.ChangedBiomeSyncPacket;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import net.minecraft.world.ChunkCoordIntPair;
 import net.minecraft.world.World;

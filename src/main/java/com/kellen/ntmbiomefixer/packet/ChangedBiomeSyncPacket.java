@@ -1,7 +1,6 @@
-package com.kellen.ntmbiomefixer.mixins.hbm;
+package com.kellen.ntmbiomefixer.packet;
 
 import com.falsepattern.endlessids.mixin.helpers.ChunkBiomeHook;
-import com.hbm.packet.BiomeSyncPacket;
 import cpw.mods.fml.common.network.simpleimpl.IMessage;
 import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;
 import cpw.mods.fml.common.network.simpleimpl.MessageContext;

@@ -1,5 +1,6 @@
 package com.kellen.ntmbiomefixer;
 
+import com.kellen.ntmbiomefixer.packet.PacketDispatcher;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
