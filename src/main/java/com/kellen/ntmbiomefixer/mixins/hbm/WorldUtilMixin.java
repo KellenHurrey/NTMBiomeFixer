@@ -7,7 +7,9 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = WorldUtil.class, remap = false)
 public class WorldUtilMixin {
@@ -16,13 +18,14 @@ public class WorldUtilMixin {
      * @author Kellen
      * @reason Update biome ids
      */
-    @Overwrite
-    public static void setBiome(World world, int x, int z, BiomeGenBase biome){
+    @Inject(method = "Lcom/hbm/world/WorldUtil;setBiome(Lnet/minecraft/world/World;IILnet/minecraft/world/biome/BiomeGenBase;)V", at = @At("HEAD"), cancellable = true)
+    public void setBiome(World world, int x, int z, BiomeGenBase biome, CallbackInfo ci){
         System.out.println("Here");
         int relBlockX = x & 15;
         int relBlockZ = z & 15;
         Chunk chunk = world.getChunkFromBlockCoords(x, z);
         ((ChunkBiomeHook) chunk).getBiomeShortArray()[relBlockZ << 4 | relBlockX] = (short)(biome.biomeID);
         chunk.isModified = true;
+        ci.cancel();
     }
 }
