@@ -16,7 +16,7 @@ public enum Mixin {
     //
 
     // Replace with your own mixins:
-    WorldUtilMixin("hbm.WorldUtilMixin", Side.SERVER, NUCLEARTECHMOD, ENDLESSIDS, VANILLA);
+    WorldUtilMixin("hbm.WorldUtilMixin", NUCLEARTECHMOD, ENDLESSIDS, VANILLA);
 
     public final String mixinClass;
     public final List<TargetedMod> targetedMods;

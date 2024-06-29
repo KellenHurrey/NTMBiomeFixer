@@ -18,6 +18,7 @@ public class WorldUtilMixin {
      */
     @Overwrite
     public static void setBiome(World world, int x, int z, BiomeGenBase biome){
+        System.out.println("Here");
         int relBlockX = x & 15;
         int relBlockZ = z & 15;
         Chunk chunk = world.getChunkFromBlockCoords(x, z);
