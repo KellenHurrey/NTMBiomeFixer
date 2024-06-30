@@ -24,15 +24,13 @@ public abstract class WorldUtilMixin {
      * @author Kellen
      * @reason Update biome ids
      */
-    @Inject(method = "Lcom/hbm/world/WorldUtil;setBiome(Lnet/minecraft/world/World;IILnet/minecraft/world/biome/BiomeGenBase;)V", at = @At("HEAD"), cancellable = true)
-    private static void setBiome(World world, int x, int z, BiomeGenBase biome, CallbackInfo ci){
-//        MainRegistry.logger.debug("here");
+    @Overwrite
+    public static void setBiome(World world, int x, int z, BiomeGenBase biome){
         int relBlockX = x & 15;
         int relBlockZ = z & 15;
         Chunk chunk = world.getChunkFromBlockCoords(x, z);
         ((ChunkBiomeHook) chunk).getBiomeShortArray()[relBlockZ << 4 | relBlockX] = (short)(biome.biomeID);
         chunk.isModified = true;
-        ci.cancel();
     }
 
     /**
