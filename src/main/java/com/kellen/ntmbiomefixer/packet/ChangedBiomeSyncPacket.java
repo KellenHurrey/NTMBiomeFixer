@@ -1,6 +1,7 @@
 package com.kellen.ntmbiomefixer.packet;
 
 import com.falsepattern.endlessids.mixin.helpers.ChunkBiomeHook;
+import com.kellen.ntmbiomefixer.NTMBiomeFixer;
 import cpw.mods.fml.common.network.simpleimpl.IMessage;
 import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;
 import cpw.mods.fml.common.network.simpleimpl.MessageContext;
@@ -51,6 +52,8 @@ public class ChangedBiomeSyncPacket implements IMessage {
                 buf.writeShort(this.biomeArray[i]);
             }
         }
+
+        NTMBiomeFixer.debug("toBytes");
     }
 
     @Override
@@ -68,6 +71,8 @@ public class ChangedBiomeSyncPacket implements IMessage {
                 this.biomeArray[i] = buf.readShort();
             }
         }
+
+        NTMBiomeFixer.debug("fromBytes");
     }
 
     public static class Handler implements IMessageHandler<ChangedBiomeSyncPacket, IMessage> {
@@ -90,7 +95,7 @@ public class ChangedBiomeSyncPacket implements IMessage {
                     world.markBlockRangeForRenderUpdate(m.chunkX << 4, 0, m.chunkZ << 4, (m.chunkX << 4) + 15, 255, (m.chunkZ << 4) + 15);
                 }
             }
-
+            NTMBiomeFixer.debug("onMessage");
             return null;
         }
     }
