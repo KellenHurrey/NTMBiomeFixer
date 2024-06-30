@@ -38,6 +38,7 @@ public class ChangedBiomeSyncPacket implements IMessage {
 
     @Override
     public void toBytes(ByteBuf buf) {
+        /*
         buf.writeInt(this.chunkX);
         buf.writeInt(this.chunkZ);
 
@@ -53,11 +54,14 @@ public class ChangedBiomeSyncPacket implements IMessage {
             }
         }
 
+         */
+
         NTMBiomeFixer.debug("toBytes");
     }
 
     @Override
     public void fromBytes(ByteBuf buf) {
+        /*
         this.chunkX = buf.readInt();
         this.chunkZ = buf.readInt();
 
@@ -72,6 +76,8 @@ public class ChangedBiomeSyncPacket implements IMessage {
             }
         }
 
+
+         */
         NTMBiomeFixer.debug("fromBytes");
     }
 
@@ -80,6 +86,7 @@ public class ChangedBiomeSyncPacket implements IMessage {
         @Override
         @SideOnly(Side.CLIENT)
         public IMessage onMessage(ChangedBiomeSyncPacket m, MessageContext ctx) {
+            /*
             NTMBiomeFixer.debug("onMessage1");
             World world = Minecraft.getMinecraft().theWorld;
             if(!world.getChunkProvider().chunkExists(m.chunkX, m.chunkZ)) return null;
@@ -95,6 +102,8 @@ public class ChangedBiomeSyncPacket implements IMessage {
                     world.markBlockRangeForRenderUpdate(m.chunkX << 4, 0, m.chunkZ << 4, (m.chunkX << 4) + 15, 255, (m.chunkZ << 4) + 15);
                 }
             }
+
+             */
             NTMBiomeFixer.debug("onMessage");
             return null;
         }
