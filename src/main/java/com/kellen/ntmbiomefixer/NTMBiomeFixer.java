@@ -20,6 +20,10 @@ public class NTMBiomeFixer {
     // etc, and register them with the GameRegistry."
     public void preInit(FMLPreInitializationEvent event) {
 //        proxy.preInit(event);
+        if (LOG == null){
+            LOG = event.getModLog();
+        }
+        debug("preInit");
         PacketDispatcher.registerPackets();
     }
 
