@@ -1,5 +1,6 @@
 package com.kellen.ntmbiomefixer.packet;
 
+import com.kellen.ntmbiomefixer.NTMBiomeFixer;
 import com.kellen.ntmbiomefixer.Tags;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
@@ -12,5 +13,6 @@ public class PacketDispatcher {
     public static void registerPackets(){
         int i = 0;
         wrapper.registerMessage(ChangedBiomeSyncPacket.Handler.class, ChangedBiomeSyncPacket.class, i++, Side.CLIENT);
+        NTMBiomeFixer.debug("Registered");
     }
 }
