@@ -13,6 +13,5 @@ public class PacketDispatcher {
     public static void registerPackets(){
         int i = 0;
         wrapper.registerMessage(ChangedBiomeSyncPacket.Handler.class, ChangedBiomeSyncPacket.class, i++, Side.CLIENT);
-        NTMBiomeFixer.debug("Registered");
     }
 }
