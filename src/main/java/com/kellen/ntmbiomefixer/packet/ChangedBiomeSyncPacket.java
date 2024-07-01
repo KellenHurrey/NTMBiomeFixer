@@ -38,7 +38,6 @@ public class ChangedBiomeSyncPacket implements IMessage {
 
     @Override
     public void toBytes(ByteBuf buf) {
-        /*
         buf.writeInt(this.chunkX);
         buf.writeInt(this.chunkZ);
 
@@ -53,15 +52,10 @@ public class ChangedBiomeSyncPacket implements IMessage {
                 buf.writeShort(this.biomeArray[i]);
             }
         }
-
-         */
-
-        NTMBiomeFixer.debug("toBytes");
     }
 
     @Override
     public void fromBytes(ByteBuf buf) {
-        /*
         this.chunkX = buf.readInt();
         this.chunkZ = buf.readInt();
 
@@ -75,10 +69,6 @@ public class ChangedBiomeSyncPacket implements IMessage {
                 this.biomeArray[i] = buf.readShort();
             }
         }
-
-
-         */
-        NTMBiomeFixer.debug("fromBytes");
     }
 
     public static class Handler implements IMessageHandler<ChangedBiomeSyncPacket, IMessage> {
@@ -86,13 +76,11 @@ public class ChangedBiomeSyncPacket implements IMessage {
         @Override
         @SideOnly(Side.CLIENT)
         public IMessage onMessage(ChangedBiomeSyncPacket m, MessageContext ctx) {
-            /*
-            NTMBiomeFixer.debug("onMessage1");
             World world = Minecraft.getMinecraft().theWorld;
             if(!world.getChunkProvider().chunkExists(m.chunkX, m.chunkZ)) return null;
             Chunk chunk = world.getChunkFromChunkCoords(m.chunkX, m.chunkZ);
             chunk.isModified = true;
-            NTMBiomeFixer.debug("onMessage2");
+
             if(m.biomeArray == null) {
                 ((ChunkBiomeHook) chunk).getBiomeShortArray()[(m.blockZ & 15) << 4 | (m.blockX & 15)] = m.biome;
                 world.markBlockRangeForRenderUpdate(m.chunkX << 4, 0, m.chunkZ << 4, m.chunkX << 4, 255, m.chunkZ << 4);
@@ -103,8 +91,6 @@ public class ChangedBiomeSyncPacket implements IMessage {
                 }
             }
 
-             */
-            NTMBiomeFixer.debug("onMessage");
             return null;
         }
     }
